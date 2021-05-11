@@ -3,6 +3,8 @@ package com.coolcats.f1follower.view
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearSnapHelper
+import androidx.recyclerview.widget.SnapHelper
 import com.coolcats.f1follower.R
 import com.coolcats.f1follower.mod.Race
 import com.coolcats.f1follower.mod.Result
@@ -32,6 +34,8 @@ class MainActivity : AppCompatActivity() {
         })
 
         race_recyclerview.adapter = raceAdapter
+        val snapHelper: SnapHelper = LinearSnapHelper()
+        snapHelper.attachToRecyclerView(race_recyclerview)
 
         submit_button.setOnClickListener {
             myLog("Pressed the button")
