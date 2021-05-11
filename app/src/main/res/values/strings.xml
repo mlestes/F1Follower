@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">F1 Follower</string>
+    <string name="year">YEAR</string>
+    <string name="get_year">GET YEAR</string>
+</resources>
