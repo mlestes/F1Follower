@@ -39,6 +39,9 @@ class MainActivity : AppCompatActivity() {
 
         submit_button.setOnClickListener {
             myLog("Pressed the button")
+            val count = supportFragmentManager.backStackEntryCount
+            for(i in 0 until count)
+                supportFragmentManager.popBackStack()
             val year = year_input_text.text.toString()
             viewModel.getResultsFromServer(year)
         }
