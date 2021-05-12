@@ -2,4 +2,9 @@
     <string name="app_name">F1 Follower</string>
     <string name="year">YEAR</string>
     <string name="get_year">GET YEAR</string>
+    <string name="finish_position">Finish Position:</string>
+    <string name="fastest_lap">Fastest Lap:</string>
+    <string name="lap">Lap:</string>
+    <string name="total_time">Total Time:</string>
+    <string name="submit_empty_search_query_for_current_year">Submit Empty Search Query for Current Year</string>
 </resources>
