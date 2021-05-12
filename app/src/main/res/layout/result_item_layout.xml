@@ -43,7 +43,7 @@
 
         <TextView
             android:id="@+id/team_name"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             tools:text="Alfa Romeo"
             android:fontFamily="@font/anton_regular"
@@ -53,6 +53,7 @@
             android:layout_marginHorizontal="@dimen/std_dp"
             android:layout_marginBottom="@dimen/std_dp"
             app:layout_constraintStart_toEndOf="@id/position_text"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/driver_name"
             app:layout_constraintBottom_toBottomOf="parent"
             />
