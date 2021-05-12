@@ -10,7 +10,7 @@
         android:usesCleartextTraffic="true"
         android:supportsRtl="true"
         android:theme="@style/Theme.SomeF1Follower">
-        <activity android:name="com.coolcats.f1follower.view.MainActivity">
+        <activity android:name="com.coolcats.f1follower.view.activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

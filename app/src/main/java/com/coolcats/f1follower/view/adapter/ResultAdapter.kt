@@ -1,4 +1,4 @@
-package com.coolcats.f1follower.view
+package com.coolcats.f1follower.view.adapter
 
 import android.view.LayoutInflater
 import android.view.View
@@ -6,13 +6,16 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.coolcats.f1follower.R
 import com.coolcats.f1follower.mod.Result
-import com.coolcats.f1follower.util.myLog
 import kotlinx.android.synthetic.main.result_item_layout.view.*
 
-class ResultAdapter(private var resultsList: List<Result>, var clickListener: (Result) -> Unit) :
+class ResultAdapter(private var resultsList: List<Result>, private var raceResultDelegate: RaceResultDelegate) :
     RecyclerView.Adapter<ResultAdapter.ResultViewHolder>() {
 
     inner class ResultViewHolder(view: View) : RecyclerView.ViewHolder(view)
+
+    interface RaceResultDelegate{
+        fun onRaceResultSelected(results: Result)
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ResultViewHolder {
         val itemView =
@@ -32,8 +35,7 @@ class ResultAdapter(private var resultsList: List<Result>, var clickListener: (R
                 team_name.text = it.Constructor.name
                 position_text.text = it.position
             }
-            holder.itemView.setOnClickListener { clickListener(resultsList[position]) }
-//            myLog("Pressed ${resultsList[position].Driver.familyName}")
+            holder.itemView.setOnClickListener { raceResultDelegate.onRaceResultSelected(resultsList[position])}
         }
     }
 

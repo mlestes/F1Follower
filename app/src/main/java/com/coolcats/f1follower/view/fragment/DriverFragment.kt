@@ -1,4 +1,4 @@
-package com.coolcats.f1follower.view
+package com.coolcats.f1follower.view.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,7 +10,7 @@ import com.coolcats.f1follower.mod.Result
 import com.coolcats.f1follower.util.myLog
 import kotlinx.android.synthetic.main.driver_info_layout.*
 
-class DriverFragment(private val result: Result) : Fragment() {
+class DriverFragment(private val results: Result) : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -23,27 +23,27 @@ class DriverFragment(private val result: Result) : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        myLog(result.Driver.givenName)
-        number_text.text = result.Driver.permanentNumber
-        driver_name.text = "${result.Driver.givenName} ${result.Driver.familyName}"
-        team_text.text = result.Constructor.name
-        nationality_text.text = result.Driver.nationality
-        dob_text.text = result.Driver.dateOfBirth
-        if(result.FastestLap == null){
+        myLog(results.Driver.givenName)
+        number_text.text = results.Driver.permanentNumber
+        driver_name.text = "${results.Driver.givenName} ${results.Driver.familyName}"
+        team_text.text = results.Constructor.name
+        nationality_text.text = results.Driver.nationality
+        dob_text.text = results.Driver.dateOfBirth
+        if(results.FastestLap == null){
             fast_lap_text.text = "N/A"
             fast_info_text.text = "N/A"
         }
         else {
-            fast_lap_text.text = result.FastestLap.Time.time
-            fast_info_text.text = result.FastestLap.lap
+            fast_lap_text.text = results.FastestLap.Time.time
+            fast_info_text.text = results.FastestLap.lap
         }
-        position_info_text.text = result.position
-        if(result.Time == null) {
+        position_info_text.text = results.position
+        if(results.Time == null) {
             total_time_label.text = "Status:"
-            total_time_text.text = result.status
+            total_time_text.text = results.status
         }
         else
-            total_time_text.text = result.Time.time
+            total_time_text.text = results.Time.time
     }
 
 }
